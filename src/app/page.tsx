@@ -1,9 +1,9 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaDiscord, FaTwitter, FaTwitch, FaYoutube, FaInstagram, FaTiktok, FaGamepad, FaHeart, FaStar, FaTimes } from 'react-icons/fa';
+import { FaDiscord, FaTwitter, FaTwitch, FaYoutube, FaTiktok, FaGamepad, FaHeart, FaStar, FaTimes } from 'react-icons/fa';
 import { SiBluesky } from 'react-icons/si';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 
@@ -14,12 +14,19 @@ interface FollowerCounts {
 }
 
 export default function Home() {
-  const [followers] = useState<FollowerCounts>({ 
+  const [followers, setFollowers] = useState<FollowerCounts>({ 
     twitch: '+800', 
     youtube: '+500', 
-    lastUpdated: new Date().toISOString() 
+    lastUpdated: ''  
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    setFollowers(prev => ({
+      ...prev,
+      lastUpdated: new Date().toISOString()
+    }));
+  }, []);
 
   const socialLinks = [
     { icon: FaDiscord, href: '/discord', label: 'Discord', color: 'var(--primary-pink)', fullUrl: 'https://discord.gg/csufmHwhJD' },
