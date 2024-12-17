@@ -288,34 +288,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-20 px-4 candy-gradient">
-        <div className="max-w-6xl mx-auto text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl font-bold mb-6">Fique por Dentro!</h2>
-            <p className="text-xl mb-8">Receba novidades e conteúdo exclusivo!</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Seu melhor e-mail"
-                className="px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 flex-1"
-              />
-              <motion.button
-                className="candy-button"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Inscrever-se
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-pink-600 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">

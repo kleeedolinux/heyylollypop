@@ -70,7 +70,7 @@ export default function HeroSection() {
             >
               <div className="relative h-[600px] w-full">
                 <Image
-                  src="/lollypopfull.png"
+                  src="/Lollypopfull.png"
                   alt="Lollypop VTuber Full Body"
                   fill
                   className="object-contain"
