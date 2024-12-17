@@ -47,7 +47,7 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       {/* About Section with Introduction */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-12 md:py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -56,14 +56,14 @@ export default function Home() {
             className="text-center"
           >
             <h2 className="section-title mb-8">Sobre Mim</h2>
-            <div className="glass-card p-8 max-w-3xl mx-auto">
+            <div className="glass-card p-6 md:p-8 max-w-3xl mx-auto">
               <motion.p
-                className="text-lg leading-relaxed mb-6"
+                className="text-base md:text-lg leading-relaxed mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                Uma vtuber que veio para alegrar e adoçar seus dias!! 
+                Uma vtuber que veio para alegrar e adoçar seus dias!!{'\n'}
                 Com uma boa dose de doces, jogos e muita diversão!! 🍬✨
               </motion.p>
             </div>
@@ -72,26 +72,26 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 md:py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="glass-card p-8 text-center"
+                className="glass-card p-6 md:p-8 text-center"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <feature.icon className="text-5xl text-pink-500 mb-4 mx-auto" />
-                <h3 className="text-xl font-bold text-pink-600 mb-2">{feature.title}</h3>
-                <p>{feature.text}</p>
+                <feature.icon className="text-4xl md:text-5xl text-pink-500 mb-4 mx-auto" />
+                <h3 className="text-lg md:text-xl font-bold text-pink-600 mb-2">{feature.title}</h3>
+                <p className="text-base md:text-lg">{feature.text}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -289,7 +289,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-pink-600 text-white py-12 px-4">
+      <footer className="bg-pink-600 text-white py-8 md:py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -297,7 +297,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="text-4xl mb-6 flex justify-center gap-4">
+            <div className="text-2xl md:text-4xl mb-6 flex flex-wrap justify-center gap-2 md:gap-4">
               {[ '🍭', '🍬', '🍫', '🧁', '🍪', '🍩' ].map((emoji, index) => (
                 <motion.span
                   key={index}
@@ -309,43 +309,58 @@ export default function Home() {
                     repeat: Infinity,
                     delay: index * 0.2,
                   }}
+                  className="inline-block"
                 >
                   {emoji}
                 </motion.span>
               ))}
             </div>
-            <p className="text-lg mb-4"> 2024 HeyyLollypop - Todos os direitos reservados</p>
-            <p className="text-sm opacity-80">Feito com 💖 e muito amor!</p>
+            <p className="text-sm md:text-base lg:text-lg mb-4"> 2024 HeyyLollypop - Todos os direitos reservados</p>
+            <p className="text-xs md:text-sm opacity-80">Feito com 💖 e muito amor!</p>
             
             {/* Credits Section */}
-            <div className="mt-6 text-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 max-w-3xl mx-auto text-left">
-              <p>◇Primeiro Design: <a href="https://twitter.com/irisarts" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@irisarts</a></p>
-              <p>◇Model: <a href="https://twitter.com/ChuChuva" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@ChuChuva</a></p>
-              <p>◇Rigg: <a href="https://twitter.com/MinKurosu" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@MinKurosu</a></p>
-              <p>◇Cenário: <a href="https://twitter.com/SumomoNona" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@SumomoNona</a></p>
-              <p>◇Emojis/Ilustração Trailer: <a href="https://twitter.com/ikymiojo" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@ikymiojo</a></p>
-              <p>◇Edição/Animação: <a href="https://twitter.com/oleoqs" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@oleoqs</a></p>
-              <p>◇Logo: <a href="https://twitter.com/Ohimetrix" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@Ohimetrix</a></p>
-              <p>◇Painéis Twitch: <a href="https://twitter.com/NinaMianya" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@NinaMianya</a></p>
-              <p>◇Ilustração Painéis: <a href="https://twitter.com/krisinkmachine" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@krisinkmachine</a></p>
-              <p>◇Desenho Tumb: <a href="https://twitter.com/Newriy2" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@Newriy2</a></p>
-              <p>◇Icon Youtube e Twitch: <a href="https://twitter.com/the_m0onnn" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@the_m0onnn</a></p>
-              <p>◇Icon Insta e tiktok: <a href="https://twitter.com/mi0s.art" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@mi0s.art</a></p>
-              <p>◇Reactive: <a href="https://twitter.com/Doggowon" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@Doggowon</a></p>
-              <p>◇Ilustração Banner: <a href="https://twitter.com/vollupiaa" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@vollupiaa</a></p>
-              <p>◇Tela inicio/Fim: <a href="https://twitter.com/ennyapenas" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">@ennyapenas</a></p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+              {/* Design Column */}
+              <div className="text-left space-y-2">
+                <h3 className="text-sm md:text-base font-semibold mb-3 text-pink-200">Design & Arte</h3>
+                <p className="text-xs md:text-sm">◇Primeiro Design: <a href="https://twitter.com/irisarts" className="hover:text-pink-300">@irisarts</a></p>
+                <p className="text-xs md:text-sm">◇Model: <a href="https://twitter.com/ChuChuva" className="hover:text-pink-300">@ChuChuva</a></p>
+                <p className="text-xs md:text-sm">◇Rigg: <a href="https://twitter.com/MinKurosu" className="hover:text-pink-300">@MinKurosu</a></p>
+                <p className="text-xs md:text-sm">◇Cenário: <a href="https://twitter.com/SumomoNona" className="hover:text-pink-300">@SumomoNona</a></p>
+                <p className="text-xs md:text-sm">◇Logo: <a href="https://twitter.com/Ohimetrix" className="hover:text-pink-300">@Ohimetrix</a></p>
+              </div>
+
+              {/* Illustrations Column */}
+              <div className="text-left space-y-2">
+                <h3 className="text-sm md:text-base font-semibold mb-3 text-pink-200">Ilustrações</h3>
+                <p className="text-xs md:text-sm">◇Emojis/Trailer: <a href="https://twitter.com/ikymiojo" className="hover:text-pink-300">@ikymiojo</a></p>
+                <p className="text-xs md:text-sm">◇Painéis: <a href="https://twitter.com/NinaMianya" className="hover:text-pink-300">@NinaMianya</a></p>
+                <p className="text-xs md:text-sm">◇Ilustrações: <a href="https://twitter.com/krisinkmachine" className="hover:text-pink-300">@krisinkmachine</a></p>
+                <p className="text-xs md:text-sm">◇Tumb: <a href="https://twitter.com/Newriy2" className="hover:text-pink-300">@Newriy2</a></p>
+                <p className="text-xs md:text-sm">◇Banner: <a href="https://twitter.com/vollupiaa" className="hover:text-pink-300">@vollupiaa</a></p>
+              </div>
+
+              {/* Icons & Other Column */}
+              <div className="text-left space-y-2">
+                <h3 className="text-sm md:text-base font-semibold mb-3 text-pink-200">Icons & Outros</h3>
+                <p className="text-xs md:text-sm">◇Icons YT/Twitch: <a href="https://twitter.com/the_m0onnn" className="hover:text-pink-300">@the_m0onnn</a></p>
+                <p className="text-xs md:text-sm">◇Icons IG/TikTok: <a href="https://twitter.com/mi0s.art" className="hover:text-pink-300">@mi0s.art</a></p>
+                <p className="text-xs md:text-sm">◇Reactive: <a href="https://twitter.com/Doggowon" className="hover:text-pink-300">@Doggowon</a></p>
+                <p className="text-xs md:text-sm">◇Telas: <a href="https://twitter.com/ennyapenas" className="hover:text-pink-300">@ennyapenas</a></p>
+                <p className="text-xs md:text-sm">◇Edição: <a href="https://twitter.com/oleoqs" className="hover:text-pink-300">@oleoqs</a></p>
+              </div>
             </div>
 
-            <p className="text-sm mt-6">
-              Developed by <a 
-                href="https://github.com/kleeedolinux" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="font-bold hover:text-pink-300 transition-colors"
-              >
-                Klee
-              </a>
-            </p>
+            <div className="mt-8 pt-6 border-t border-pink-500/30">
+              <p className="text-xs md:text-sm">
+                Developed by <a 
+                  href="https://github.com/kleeedolinux" 
+                  className="font-bold hover:text-pink-300 transition-colors"
+                >
+                  Klee
+                </a>
+              </p>
+            </div>
           </motion.div>
         </div>
       </footer>

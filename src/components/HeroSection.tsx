@@ -26,14 +26,14 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="text-center z-10 relative"
         >
-          <h1 className="hero-text mb-10">
-            HeyyLollypop {candyEmojis[currentEmoji]}
+          <h1 className="hero-text mb-10 px-4 break-words whitespace-pre-line">
+            HeyyLollypop{'\n'}{candyEmojis[currentEmoji]}
           </h1>
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="lg:w-1/2">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative">
+            <div className="lg:w-1/2 w-full relative">
               <div className="glass-card p-8 max-w-3xl mx-auto mb-10">
-                <p className="text-xl md:text-2xl text-pink-600">
-                  Oioi, me chamo lollypop, eu era uma garota comum até que de repente vim parar nesse mundo de doces!! 
+                <p className="text-lg md:text-xl lg:text-2xl text-pink-600 leading-relaxed">
+                  Oioi, me chamo lollypop, eu era uma garota comum até que de repente vim parar nesse mundo de doces!!{'\n'}
                   Sou uma vtuber adocicada que veio para alegrar e adoçar seus dias!! 🍬✨
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
@@ -59,6 +59,54 @@ export default function HeroSection() {
                   </motion.a>
                 </div>
               </div>
+              
+              {/* Decorative Elements - Only visible on larger screens */}
+              <div className="hidden lg:block absolute -right-16 top-1/2 transform -translate-y-1/2 z-10">
+                <div className="space-y-8">
+                  <motion.div
+                    animate={{
+                      rotate: [0, 360],
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    className="text-4xl"
+                  >
+                    🍭
+                  </motion.div>
+                  <motion.div
+                    animate={{
+                      rotate: [360, 0],
+                      scale: [1, 1.2, 1],
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    className="text-4xl"
+                  >
+                    🍬
+                  </motion.div>
+                  <motion.div
+                    animate={{
+                      rotate: [0, -360],
+                      scale: [1, 1.15, 1],
+                    }}
+                    transition={{
+                      duration: 7,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    className="text-4xl"
+                  >
+                    🧁
+                  </motion.div>
+                </div>
+              </div>
             </div>
 
             {/* Full Body Image */}
@@ -66,16 +114,51 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="lg:w-1/2"
+              className="lg:w-1/2 w-full order-first lg:order-last relative"
             >
-              <div className="relative h-[600px] w-full">
+              <div className="relative h-[400px] md:h-[500px] lg:h-[600px] w-full">
                 <Image
                   src="/Lollypopfull.png"
                   alt="Lollypop VTuber Full Body"
                   fill
-                  className="object-contain"
+                  className="object-contain object-center lg:object-right"
                   priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px"
                 />
+              </div>
+              
+              {/* Additional decorative elements around the image on larger screens */}
+              <div className="hidden lg:block absolute -left-8 top-1/4 transform -translate-y-1/2">
+                <motion.div
+                  animate={{
+                    y: [0, -20, 0],
+                    rotate: [0, 360],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="text-5xl"
+                >
+                  🍪
+                </motion.div>
+              </div>
+              <div className="hidden lg:block absolute -right-4 bottom-1/4">
+                <motion.div
+                  animate={{
+                    y: [0, 20, 0],
+                    rotate: [0, -360],
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="text-5xl"
+                >
+                  🍫
+                </motion.div>
               </div>
             </motion.div>
           </div>
